@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QRコードジェネレータ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="qrcode.min.js"></script>
+</head>
+<body>
+<h1>URLからQRコードを生成するツールby原田</h1>
+<!--    <textarea id="text-input" rows="1" placeholder="ここにテキストを入力してください"></textarea>
+    <br/>
+    <button onclick="generateQR()">QRコードを生成</button>
+    -->
+
+    <input type="text" id="text-input" placeholder="URLを入力">
+    <button onclick="generateQR()">QRコード生成</button>
+    <br>
+    <br>
+    <div id="qrcode" style="width:128px;margin:0 auto;"></div>
+    
+    <script>
+        function generateQR() {
+            document.getElementById('qrcode').innerHTML = "";
+            var data = document.getElementById('text-input').value;
+            var qrcode = new QRCode(document.getElementById('qrcode'), {
+                text: data,
+                width: 128,
+                height: 128,
+                
+                
+                
+            });
+            
+            
+        }
+        
+    </script>
+</body>
+</html>
+
+
 
